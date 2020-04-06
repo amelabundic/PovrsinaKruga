@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Povrsina kruga</h1>
+
+<input type="number" name="poluprecnik" id="r" placeholder="Unesite poluprecnik"><br><br>
+<input type="button" value="Izracunaj" onclick="Izracunaj()"><br>
+<br>
+<span>Povrsina kruga je:</span>
+<span id="span1"></span>
+    <script>
+        function Izracunaj() {
+          
+          var span1 =document.getElementById("span1");
+          r = document.getElementById("r").value;
+          
+          
+          if (r < 0  ) {
+              span1.innerHTML = "Broj mora biti veci od nule";
+              return;
+          }
+          else if(r >= 0){
+         var povrsina = 2*r*3.14;
+
+         if (r == "") {
+             alert("Morate unijeti broj");
+         } else {
+             span1.innerHTML = povrsina;
+         }
+          }
+            
+           
+        }
+        document.body.onload = Izracunaj;
+    </script>
+</body>
+</html>
